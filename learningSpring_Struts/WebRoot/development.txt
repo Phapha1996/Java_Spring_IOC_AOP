@@ -1,0 +1,17 @@
+1.Spring整合Struts:
+	----(1)导入Spring核心开发包，导入struts的核心开发包
+	----(2)导入struts2-spring-plugin,spring-web开发包连接两个框架
+	----(3)如果要使用AOP功能，还需要导入spring-aop(提供面向切面支持),aspectjrt,asoectweaver开发包，cglib开发包
+	----(4)修改web.xml文件，除了配置struts之外还有以下配置：
+		<context-param>
+  			<param-name>contextConfigLocation</param-name>
+  			<param-value>/WEB-INF/classes/applicationContext.xml</param-value>
+  		</context-param>
+    	<listener>
+        	<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  	    </listener>
+	
+
+
+2.AOP出现的错误：error at ::0 can't find referenced pointcut异常的解决办法：导入两个相同的JAR包，版本
+要匹配JDK1.6
