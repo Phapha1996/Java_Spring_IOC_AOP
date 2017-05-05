@@ -1,0 +1,2 @@
+# SpringIOC_AOP_Tx
+这里聚集了Spring对切面以及依赖注入的学习程序，还有对Hibernate整合的Transaction操作

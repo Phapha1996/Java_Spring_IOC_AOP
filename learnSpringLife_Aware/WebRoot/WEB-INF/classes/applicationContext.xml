@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd"
+        
+        default-autowire="byName"
+        >
+  
+   <bean id="userDao" class="org.fage.dao.UserDao">
+   </bean>
+   
+   <!-- lazy init什么时候用什么时候才new，默认是框架初始化就是new了的 -->
+	<bean id="userService" class="org.fage.service.UserService" autowire="byType" lazy-init="true" scope="singleton">
+	</bean> 
+	
+	<bean id="userAction" class="org.fage.controller.UserAction" autowire="byType" scope="prototype">
+	</bean>
+	
+	
+
+</beans>
